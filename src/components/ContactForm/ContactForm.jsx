@@ -2,7 +2,7 @@ import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import PropTypes from "prop-types";
 import { nanoid } from "nanoid";
-
+import css from '../ContactForm/ContactForm.module.css'
 
 const ContactForm = ({ addContact }) => {
   const initialValues = {
@@ -39,15 +39,32 @@ const ContactForm = ({ addContact }) => {
       onSubmit={handleContactForm}
     >
       {({ isSubmitting }) => (
-        <Form>
-          <div>
-            <label htmlFor="name">Name</label>
-            <Field id="name" type="text" name="name" />
+        <Form className={css["form"]}>
+          <div className={css["input-box"]}>
+            <div className={css["input-element"]}>
+              <label className={css["label"]} htmlFor="name">
+                Name
+              </label>
+              <Field
+                className={css["input"]}
+                id="name"
+                type="text"
+                name="name"
+              />
+            </div>
+            <div className={css["input-element"]}>
+              <label className={css["label"]} htmlFor="number">
+                Phone number
+              </label>
+              <Field
+                className={css["input"]}
+                id="number"
+                type="tel"
+                name="number"
+              />
+            </div>
           </div>
-          <div>
-            <label htmlFor="number">Phone number</label>
-            <Field id="number" type="tel" name="number" />
-          </div>
+
           <div>
             <button type="submit" disabled={isSubmitting}>
               Add Contact

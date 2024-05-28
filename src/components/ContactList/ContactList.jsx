@@ -1,9 +1,11 @@
 import PropTypes from "prop-types";
 import Contact from "../Contact/Contact";
+import css from "../ContactList/ContactList.module.css"
+
 
 const ContactList = ({ contacts, deleteContact }) => {
   return (
-    <ul>
+    <ul className={css['contact-list']}>
       {contacts.map((contact) => (
         <Contact key={contact.id} contact={contact} deleteContact={deleteContact} />
       ))}

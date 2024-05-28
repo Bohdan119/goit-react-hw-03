@@ -5,6 +5,10 @@
   text-align: center;
   border: 1px solid black;
   border-radius: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .logo {

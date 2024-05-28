@@ -4,7 +4,9 @@ import css from '../Contact/Contact.module.css'
 const Contact = ({ contact, deleteContact }) => {
   return (
     <li className={css["contact-item"]}>
-      <span className={css['contact-name']}>{contact.name}</span>: <span className={css['contact-number']}>{contact.number}</span>
+      <div className={css['contact-box']}>
+      <span className={css['contact-name']}>{contact.name} :</span> <span className={css['contact-number']}>tel. {contact.number}</span>
+      </div>
       <button
         className={css["button-delete"]}
         onClick={() => deleteContact(contact.id)}
